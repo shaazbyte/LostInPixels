@@ -1,11 +1,29 @@
 [gd_scene format=3 uid="uid://7puwbyt652s4"]
 
-[node name="Mainmenu" type="Node2D" unique_id=282040649]
+[ext_resource type="Script" uid="uid://ciajqhgn17y8o" path="res://script/mainmenu.gd" id="1_c040g"]
+
+[node name="Mainmenu" type="Control" unique_id=332175124]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c040g")
 
 [node name="Background" type="ColorRect" parent="." unique_id=350048997]
+texture_filter = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.0627451, 0.078431375, 0.14901961, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=219710535]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,15 +32,26 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1937525797]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2065462031]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Lost In Pixels"
 
 [node name="Play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=492694029]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Play"
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=316301322]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Settings"
 
 [node name="Exit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1718818635]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
