@@ -4,7 +4,7 @@ extends CharacterBody2D
 const speed = 300
 
 func _physics_process(delta):
-	pass
+	player_move(delta)
 	
 func player_move(delta):
 	
@@ -27,3 +27,5 @@ func player_move(delta):
 	else:
 		velocity.y = 0
 		velocity.x = 0
+	
+	move_and_slide()

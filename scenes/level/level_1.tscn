@@ -698,4 +698,4 @@ script = ExtResource("5_0f3yk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=719524275]
 sprite_frames = SubResource("SpriteFrames_blkt8")
 animation = &"death"
-frame_progress = 0.4927248
+frame_progress = 0.8407417
