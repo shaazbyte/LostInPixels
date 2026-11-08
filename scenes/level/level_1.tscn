@@ -179,18 +179,24 @@ texture = ExtResource("3_u8rbc")
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.3185425, 10.17794, 7.506607, 12.248726, 10.871635, 23.379211, -1.2942429, 27.779636, -12.165878, 19.755333)
 6:7/size_in_atlas = Vector2i(2, 2)
 6:7/0 = 0
+6:7/0/y_sort_origin = 10
 6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.546902, 5.7455387, 14.461161, 4.3550434, 13.070665, 10.890373, 9.038225, 14.366615, 4.8667374, 16.17426, 0.4171486, 17.564754, -3.7543392, 17.147606, -9.316322, 16.313309, -13.626861, 13.254219)
 8:6/size_in_atlas = Vector2i(2, 3)
 8:6/0 = 0
+8:6/0/y_sort_origin = 10
 8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.612785, 8.8836975, 10.612789, 10.954487, 8.542, 15.872604, 5.283886, 20.345749, 0, 24.155758, -5.1448345, 19.0943, -8.800846, 13.542969)
 10:7/size_in_atlas = Vector2i(2, 2)
 10:7/0 = 0
+10:7/0/y_sort_origin = 6
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.8417444, 0.21905518, -10.719736, -2.4567375, -2.747343, 0.116695404, 2.8312788, 0.014334679, 8, -2.7873898, 12.260574, 2.7510319, 9.202045, 9.446733, 2.8369942, 9.694723, -3.36273, 9.777386, -9.066477, 8.372114, -11.133051, 5.0655956, -10.719736, -2.374075)
 0:0/0 = 0
+0:0/0/y_sort_origin = 3
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.887492, -1.0518007, 0.06700802, -0.95027447, 6.564642, -1.2548513, 6.6414976, 2.6616454, 2.148281, 2.7046442, 1.437603, 4.735156, -1.5066385, 4.684393, -1.4558754, 2.298543, -6.684441, 2.3493052)
 0:1/0 = 0
+0:1/0/y_sort_origin = 4
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.3951197, -1.1025629, -0.18680573, 0.77565956, 6.564642, -1.2548513, 6.6414976, 2.6616454, 5.7058163, 5.7268076, 1.2460985, 7.1696587, -3.9780788, 6.4622564, -6.3798647, 4.735156, -6.725567, 2.2412977)
 5:0/0 = 0
+5:0/0/y_sort_origin = 3
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.8417444, 0.21905518, -2.747343, 0.116695404, 2.8312788, 0.014334679, 6.209159, -0.2927456, 6.6414976, 2.6616454, 6.46506, 6.207116, 0.8352585, 6.1047564, -2.747343, 6.207116, -6.739384, 6.309478, -6.684441, 2.3493052)
 10:0/size_in_atlas = Vector2i(2, 1)
 10:0/0 = 0
@@ -233,6 +239,7 @@ texture = ExtResource("1_ybxn4")
 2:4/0 = 0
 2:5/0 = 0
 2:6/0 = 0
+2:6/0/y_sort_origin = 3
 2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.147651, 8, 5.059005, 3.3534393, 5.2914953, -2.179854, 6.918935, -8, 5.5295677, -8, -3.2121048, -4.1365004, -4.6107726)
 2:7/0 = 0
 2:8/0 = 0
@@ -281,7 +288,7 @@ sources/0 = SubResource("TileSetAtlasSource_0f3yk")
 sources/1 = SubResource("TileSetAtlasSource_wdc5c")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptqrd"]
-radius = 13.038404
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8rbc"]
 atlas = ExtResource("5_u8rbc")
@@ -694,6 +701,7 @@ animations = [{
 }]
 
 [node name="level1" type="Node2D" unique_id=2097809636]
+y_sort_enabled = true
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=227544406]
 texture_filter = 1
@@ -702,20 +710,23 @@ tile_map_data = PackedByteArray("AAAPAAIABQADAAAAAAAPAAMABQADAAAAAAAPAAQABQAAAAA
 tile_set = SubResource("TileSet_blkt8")
 
 [node name="decors" type="TileMapLayer" parent="." unique_id=785814558]
+y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAAAAAQAAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAcAAAAAAAUAAAAAAAkAAAAAAAUAAAAPAAQAAAAAAAUAAAAPAAYAAAAAAAUAAAAPAAgAAAAAAAUAAAAFAP//AAAAAAAAAAACAAIAAAAAAAEAAAAEAAAAAAAAAAEAAAAEAAUAAAAAAAEAAAANAAIAAAAAAAEAAAAKAAAAAAAAAAEAAAAMAP//AAAAAAEAAAAKAAgAAAAAAAEAAAACAAgAAAAAAAEAAAANAAcAAAAAAAEAAAANAAUAAAAFAAAAAAAMAAQAAAAKAAcAAAACAAYAAAAKAAcAAAAEAAIAAAAGAAcAAAAEAAcAAAAGAAcAAAALAAYAAAAGAAcAAAAJAP//AAAIAAYAAAAGAAQAAAAIAAYAAAD//wEAAQACAAYAAAAAAAEAAQACAAYAAAABAAEAAQACAAYAAAACAAEAAQACAAYAAAADAAEAAQADAAYAAAADAAAAAQADAAUAAAADAP//AQADAAUAAAACAAAAAQACAAUAAAABAAAAAQACAAUAAAAAAAAAAQACAAUAAAD//wAAAQACAAUAAAD/////AQACAAUAAAAAAP//AQACAAUAAAABAP//AQACAAUAAAACAP//AQACAAUAAAAOAAEAAQACAAYAAAAPAAEAAQACAAYAAAAQAAEAAQACAAYAAAANAAEAAQABAAYAAAANAAAAAQABAAUAAAANAP//AQABAAUAAAAQAAAAAQACAAUAAAAQAP//AQACAAUAAAAPAP//AQACAAUAAAAOAP//AQACAAUAAAAOAAAAAQACAAUAAAAPAAAAAQACAAUAAAAAAAMAAAAAAAUAAAAPAAIAAAAAAAUAAAA=")
 tile_set = SubResource("TileSet_lr0d8")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=73712739]
+y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("5_0f3yk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=818781522]
+position = Vector2(265, 117)
 shape = SubResource("CircleShape2D_ptqrd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=719524275]
-position = Vector2(-3, -20)
+position = Vector2(261, 97)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_blkt8")
 animation = &"death"
