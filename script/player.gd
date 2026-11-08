@@ -71,5 +71,6 @@ func play_ani(movement):
 			ani.play("front_walk")
 		elif movement == 0:
 			ani.play("front_idle")
+			
 	
 			
