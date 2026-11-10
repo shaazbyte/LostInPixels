@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://r2x6ykbqew2n" path="res://assets/environment/grass.png" id="2_aojk6"]
 [ext_resource type="Texture2D" uid="uid://c3fviyfk2hxt5" path="res://assets/environment/objects.png" id="3_n2350"]
 [ext_resource type="Texture2D" uid="uid://bj2hb6i75d28g" path="res://assets/environment/decor_16x16.png" id="4_bo3rs"]
+[ext_resource type="Script" uid="uid://jwg7sajd7ife" path="res://script/world.gd" id="5_aojk6"]
 [ext_resource type="Texture2D" uid="uid://ixga64nfj1ys" path="res://assets/environment/decor_8x8.png" id="5_btifu"]
 [ext_resource type="PackedScene" uid="uid://tl4rsghgsej1" path="res://scenes/player/kai.tscn" id="6_fy2ep"]
 
@@ -298,6 +299,9 @@ sources/1 = SubResource("TileSetAtlasSource_jyww5")
 sources/2 = SubResource("TileSetAtlasSource_ewor0")
 sources/3 = SubResource("TileSetAtlasSource_lkxmd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blkt8"]
+size = Vector2(149, 155)
+
 [node name="forest_entrance" type="Node2D" unique_id=2097809636]
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=227544406]
@@ -308,6 +312,7 @@ tile_set = SubResource("TileSet_blkt8")
 
 [node name="world" type="Node2D" parent="." unique_id=250490184]
 y_sort_enabled = true
+script = ExtResource("5_aojk6")
 
 [node name="decor" type="TileMapLayer" parent="world" unique_id=1554862425]
 y_sort_enabled = true
@@ -318,7 +323,16 @@ tile_set = SubResource("TileSet_mdxdl")
 [node name="Kai" parent="world" unique_id=1954736927 instance=ExtResource("6_fy2ep")]
 position = Vector2(8, 13)
 
-[node name="collisions" type="StaticBody2D" parent="." unique_id=1327928081]
+[node name="collisions" type="StaticBody2D" parent="world" unique_id=1327928081]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=865937567]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world/collisions" unique_id=865937567]
 polygon = PackedVector2Array(79, -1, 244, 0, 242, -163, 385, -165, 390, -7, 568, -5, 571, 394, 78, 397, 72, 19, 46, -69, -30, -74, -69, -61, -81, 26, -86, 134, -114, 236, -107, 383, 41, 475, 269, 514, 619, 495, 848, 336, 798, 93, 747, -29, 607, -156, 465, -209, 169, -177)
+
+[node name="WW_transition" type="Area2D" parent="world" unique_id=993323828]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/WW_transition" unique_id=926837762]
+position = Vector2(316.5, -87.5)
+shape = SubResource("RectangleShape2D_blkt8")
+
+[connection signal="body_entered" from="world/WW_transition" to="world" method="_on_ww_transition_body_entered"]
+[connection signal="body_exited" from="world/WW_transition" to="world" method="_on_ww_transition_body_exited"]
